@@ -1,0 +1,37 @@
+.progress-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -10px;
+    .progress-bar {
+        position: relative;
+        width: 90px;
+        height: 4px;
+        background: #000;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: -4px;
+            width: 82px;
+            height: 12px;
+            background: #000;
+            z-index: 1;
+        }
+        .completed {
+            position: absolute;
+            left: 8px;
+            width: 60%;
+            height: 3px;
+            background: #fff;
+            z-index: 999;
+        }
+    }
+    .progress-info {
+        font-size: 15px;
+        font-weight: 500;
+        padding-left: 10px;
+        margin-top: 2px;
+    }
+}

@@ -1,0 +1,74 @@
+.g-home {
+    @at-root #{&}__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 220px;
+        margin-top: 40px;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    @at-root #{&}__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 290px;
+        height: 200px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        overflow: hidden;
+        background-image: url("https://www.monterail.com/hubfs/vuevsreact.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        transition: 1s all ease;
+        cursor: pointer;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            height: 65px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background: #ffd601;
+
+            h1 {
+                font-size: 35px;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: 290px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.1);
+            transition: 1s all ease;
+        }
+
+        &:hover {
+            transform: scale(1.03);
+
+            &:after {
+                content: "";
+                background: rgba(0, 0, 0, 0.3);
+                width: 290px;
+                height: 200px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 999;
+            }
+        }
+    }
+}

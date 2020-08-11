@@ -1,0 +1,50 @@
+@font-face {
+    font-family: crumbledPixel;
+    src: url("../fonts/crumbled-pixels/crumbled_pixels.ttf");
+}
+
+@font-face {
+    font-family: origami;
+    src: url("../fonts/origami-mommy/origami.ttf");
+}
+
+@font-face {
+    font-family: thirteenPixel;
+    src: url("../fonts/thirteen-pixel-fonts/thirteen_pixel.ttf");
+}
+
+@font-face {
+    font-family: serifPixel;
+    src: url("../fonts/serif/712_serif.ttf");
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.origami {
+    font-family: origami;
+}
+
+.thirteenPixel {
+    font-family: thirteenPixel;
+}
+
+.crumbledPixel {
+    font-family: crumbledPixel;
+}
