@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import * as actionTypes from "./contants";
+import * as actionTypes from "./constants";
 
 export const getGames = () => {
     return (dispatch) => {

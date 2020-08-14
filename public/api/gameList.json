@@ -8,21 +8,20 @@
             "img": "http://image.innoweb.cn/2020-08-03-todo.png"
         },
         {
-            "title": "chess",
-            "url": "/game/chess",
-            "completed": 10
+            "title": "ttt",
+            "url": "/game/ttt",
+            "completed": 100,
+            "img": "http://image.innoweb.cn/2020-08-12-123311.png"
         },
         {
             "title": "2048",
             "url": "/game/2048",
-            "completed": 0,
-            "img": "http://image.innoweb.cn/2020-08-03-todo.png"
+            "completed": 0
         },
         {
             "title": "flappy",
             "url": "/game/flappy",
-            "completed": 0,
-            "img": "http://image.innoweb.cn/2020-08-03-todo.png"
+            "completed": 0
         }
     ]
 }

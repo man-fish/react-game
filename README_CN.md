@@ -2,9 +2,9 @@
 
 ![](http://image.innoweb.cn/2020-08-14-015734.png)
 
-## Introduction
+## 简介
 
-I plan to use React to make a small game/app every week, and I will try my best to keep the code clean and standard. The following 👇 has been completed so far:
+作为初学者我计划每周使用React制作一个小游戏/应用程序，并且将尽力保持代码的整洁和标准。以下👇是目前为止已完成的：
 
 | **Game**    | **Progress** | **date**   |
 | ----------- | ------------ | ---------- |
@@ -13,9 +13,9 @@ I plan to use React to make a small game/app every week, and I will try my best 
 | 2048        | 0%           | 2020-08-14 |
 | flappy-bird | 0%           | unknown    |
 
-## Quick Start
+## 快速开始
 
-Require nodejs version > `13.7.0` as config scripts were wrote in es6+, also recommend to use npm to manage project dependencies. After fork the project following below commands to get started.
+项目要求`nodejs`版本 `> 13.7.0`，因为配置脚本是在es6+中编写的，还需要使用npm来管理项目依赖项。 在克隆项目之后，请按照以下命令开始使用。
 
 ```bash
   > git clone git@github.com:<your name>/react-game.git
@@ -26,6 +26,6 @@ Require nodejs version > `13.7.0` as config scripts were wrote in es6+, also rec
   > npm run build # Build the project from source
 ```
 
-## License
+## 协议
 
 MIT

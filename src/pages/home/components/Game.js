@@ -1,12 +1,14 @@
 import React from "react";
 
+import config from "../../../config/config";
+
 import Progress from "../../../common/progress";
 
 export default class Game extends React.Component {
     render() {
         let { title, completed, img } = this.props;
         if (!img) {
-            img = "https://www.monterail.com/hubfs/vuevsreact.jpg";
+            img = config.defaultImg;
         }
         let imgUrl = `url("${img}")`;
         return (

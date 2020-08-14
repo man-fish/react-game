@@ -1,4 +1,4 @@
-import * as actionTypes from "./contants";
+import * as actionTypes from "./constants";
 
 const defaultState = {
     games: [],

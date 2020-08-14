@@ -1,0 +1,108 @@
+.ttt {
+    @at-root #{&}__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 40px;
+        box-sizing: border-box;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    @at-root #{&}__board {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        box-sizing: border-box;
+    }
+
+    @at-root #{&}__board__info {
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+        line-height: 22px;
+        font-size: 22px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    @at-root #{&}__board__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        // border-bottom: 1px solid #000;
+    }
+
+    @at-root #{&}__board__btn {
+        position: relative;
+        width: 100%;
+        outline: none;
+        border: 2px solid #000;
+        margin-top: 20px;
+        background: #fff;
+
+        font: {
+            size: 16px;
+            weight: 400;
+        }
+
+        text-align: center;
+        padding: 8px 12px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s all ease;
+            background: rgba(0, 0, 0, 0.0);
+        }
+
+        &:hover {
+            &:after {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    @at-root #{&}__piece {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: none;
+        outline: none;
+        background: white;
+        // border: 2px solid #000;
+        box-sizing: border-box;
+        // margin-right: -2px;
+        // margin-bottom: -2px;
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 35px;
+        text-align: center;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s all ease;
+            background: rgba(0, 0, 0, 0.0);
+        }
+
+        &:hover {
+            &:after {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}

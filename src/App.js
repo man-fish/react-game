@@ -10,6 +10,7 @@ import "./assets/css/public/index.scss";
 
 import Header from "./common/header/index";
 import Home from "./pages/home";
+import Game from "./pages/game";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Header />
                     <Switch>
                         <Route path="/" exact component={Home}></Route>
+                        <Route path="/game" component={Game}></Route>
                     </Switch>
                 </div>
             </BrowserRouter>
