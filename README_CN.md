@@ -1,6 +1,8 @@
 # react-game
 
-![](http://image.innoweb.cn/2020-08-14-015734.png)
+## 预览
+
+[preview](https://image.innoweb.cn/2020-08-14-015734.png)
 
 ## 简介
 

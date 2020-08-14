@@ -1,6 +1,8 @@
-# react-game
+# react-game | [中文](/blob/master/README_CN.md)
 
-![](http://image.innoweb.cn/2020-08-14-015734.png)
+## Preview
+
+[preview](https://image.innoweb.cn/2020-08-14-015734.png)
 
 ## Introduction
 
