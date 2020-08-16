@@ -12,7 +12,7 @@ I plan to use React to make a small game/app every week, and I will try my best 
 | ----------- | ------------ | ---------- |
 | Todo        | 100%         | 2020-08-01 |
 | TicTacToe   | 100%         | 2020-08-12 |
-| 2048        | 0%           | 2020-08-14 |
+| 2048        | 100%         | 2020-08-16 |
 | flappy-bird | 0%           | unknown    |
 
 ## Quick Start
