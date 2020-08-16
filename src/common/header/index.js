@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "../../assets/css/public/header/index.scss";
 
 export default class Header extends React.Component {
@@ -30,7 +30,9 @@ export default class Header extends React.Component {
                             p-id="4882"
                         ></path>
                     </svg>
-                    <span className="origami">React Game</span>
+                    <span className="origami">
+                        <Link to={"/"}>React Game</Link>
+                    </span>
                 </div>
                 <div className="g-header__title "></div>
             </div>

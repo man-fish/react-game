@@ -11,12 +11,13 @@
             "title": "ttt",
             "url": "/game/ttt",
             "completed": 100,
-            "img": "http://image.innoweb.cn/2020-08-12-123311.png"
+            "img": "http://image.innoweb.cn/2020-08-16-120646.png"
         },
         {
             "title": "2048",
             "url": "/game/2048",
-            "completed": 0
+            "completed": 0,
+            "img": "http://image.innoweb.cn/2020-08-16-120338.png"
         },
         {
             "title": "flappy",

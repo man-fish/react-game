@@ -1,0 +1,171 @@
+@import "../../var.scss";
+@import "./var.scss";
+
+.b2048 {
+    @at-root #{&}__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 580px;
+        height: 360px;
+        padding: 30px 30px;
+        box-sizing: border-box;
+        background: $black;
+        box-shadow: $white-shadow;
+        user-select: none;
+    }
+
+    @at-root #{&}__board {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 320px;
+        height: 320px;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        background: $board-bg;
+    }
+
+    @at-root #{&}__panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 180px;
+        height: 320px;
+    }
+
+    @at-root #{&}__panel__info {
+        color: $piece-font;
+
+        p {
+            margin-top: 10px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+    }
+
+    @at-root #{&}__controller {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: $piece-font;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+
+        button {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: $piece-4;
+            color: $piece-font;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 40px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.5s all ease;
+                background: rgba(0, 0, 0, 0.0);
+            }
+
+            &:hover {
+                &:after {
+                    background: rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+
+    @at-root #{&}__controller__two {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 126px;
+    }
+
+    @at-root #{&}__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+    }
+
+    @at-root #{&}__piece {
+        width: 70px;
+        height: 70px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 70px;
+        text-align: center;
+        color: $piece-font-reverse;
+        background: $piece-bg;
+        cursor: pointer;
+    }
+
+    @at-root #{&}__piece__2 {
+        background: $piece-2;
+        color: $piece-font;
+    }
+
+    @at-root #{&}__piece__4 {
+        background: $piece-4;
+        color: $piece-font;
+    }
+
+    @at-root #{&}__piece__8 {
+        background: $piece-8;
+    }
+
+    @at-root #{&}__piece__16 {
+        background: $piece-16;
+    }
+
+    @at-root #{&}__piece__32 {
+        background: $piece-32;
+    }
+
+    @at-root #{&}__piece__64 {
+        background: $piece-64;
+    }
+
+    @at-root #{&}__piece__128 {
+        background: $piece-128;
+    }
+
+    @at-root #{&}__piece__256 {
+        background: $piece--256;
+    }
+
+    @at-root #{&}__piece__512 {
+        background: $piece-512;
+    }
+
+    @at-root #{&}__piece__1024 {
+        background: $piece-1024;
+    }
+
+    @at-root #{&}__piece__2048 {
+        background: $piece--2048;
+    }
+
+    @at-root #{&}__piece__4096 {
+        background: $piece--4096;
+    }
+}

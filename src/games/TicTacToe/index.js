@@ -1,6 +1,6 @@
 import React from "react";
 
-import Board from "./component/Board";
+import Board from "./components/Board";
 
 import "../../assets/css/game/TicTacToe/index.scss";
 

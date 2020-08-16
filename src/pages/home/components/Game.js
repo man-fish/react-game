@@ -12,7 +12,7 @@ export default class Game extends React.Component {
         }
         let imgUrl = `url("${img}")`;
         return (
-            <div className="g-home__box" style={{ "background-image": imgUrl }}>
+            <div className="g-home__box" style={{ backgroundImage: imgUrl }}>
                 <div>
                     <h1 className="crumbledPixel">{title}</h1>
                     <Progress completed={completed}></Progress>
