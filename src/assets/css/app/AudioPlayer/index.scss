@@ -1,0 +1,208 @@
+@import "./var.scss";
+
+.APlayer {
+    position: relative;
+    display: flex;
+    max-width: 300px;
+    max-height: 75px;
+    width: 300px;
+    height: 75px;
+    border-radius: 8px;
+    background-color: $audio-bg;
+    user-select: none;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12),
+        0 20px 20px rgba(95, 23, 101, 0.2);
+
+
+    @at-root #{&}__disk {
+        flex: 1;
+        padding: 12px;
+        z-index: 2;
+    }
+
+    @at-root #{&}__disk__container {
+        position: relative;
+        padding-top: 100%;
+        border-radius: 100%;
+        overflow: hidden;
+        transform: translateY(-42%) scale(0.95);
+        transform-origin: bottom center;
+        transition: all 0.8s ease;
+        background: #000;
+
+        input {
+            display: none;
+        }
+    }
+
+    @at-root #{&}__disk__cover {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        bottom: -10px;
+        right: -10px;
+        background: $disk-bg;
+        // background-image: radial-gradient(circle, $disk-bg-center 0%, $disk-bg 100%);
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 35px;
+            height: 1px;
+            transform: rotate(-45deg);
+            transform-origin: left;
+            background: $disk-derocation-color;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -9px;
+            margin-top: -9px;
+            width: 18px;
+            height: 18px;
+            border-radius: 100%;
+            background: $disk-derocation-color;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+            // background-image: linear-gradient(45deg, white, $disk-derocation-color);
+        }
+    }
+
+    @at-root #{&}__disk__container--playing {
+        transform: translateY(-60%) translateX(10%) scale(1.05);
+
+
+    }
+
+    @at-root #{&}__disk__cover--playing {
+        animation: rotate infinite 6s linear;
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    @at-root #{&}__controller {
+        z-index: 2;
+        flex: 2;
+        padding: 12px 12px 12px 0;
+    }
+
+    @at-root #{&}__controller__container {
+        display: flex;
+        height: 100%;
+    }
+
+    @at-root #{&}__controller__radio {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0);
+        color: $btn-color;
+        font-size: 18px;
+        transition: 0.5s all ease;
+        cursor: pointer;
+
+        &:hover {
+            color: $btn-active-color;
+            background: $btn-active-bg;
+        }
+    }
+
+    @at-root #{&}__controller__radio--active {
+        color: $btn-active-color;
+        background: $btn-active-bg;
+    }
+
+    @at-root #{&}__progress {
+        position: absolute;
+        top: 0;
+        left: 8px;
+        right: 8px;
+        bottom: 20px;
+        z-index: -1;
+    }
+
+    @at-root #{&}__progress__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10px 12px 0 116px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: $progress-bg;
+        transition: 1s all ease;
+        // transform: translateY(0);
+    }
+
+    @at-root #{&}__progress__container--active {
+        transform: translateY(-100%);
+    }
+
+    @at-root #{&}__progress__title {
+        color: $title-color;
+        font-size: 12px;
+        font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @at-root #{&}__progress__time {
+        display: inline-block;
+        width: 100%;
+        color: $description-color;
+        margin-top: 5px;
+        font-size: 1px !important;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    @at-root #{&}__progress__line {
+        position: relative;
+        width: 100%;
+        height: 1px;
+        margin-left: 1px;
+        margin-top: 10px;
+        background: $progress-color;
+
+        span {
+            position: absolute;
+            width: 60%;
+            height: 1px;
+            border-radius: 100%;
+            background: $progress-finish-color;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 100%;
+                width: 5px;
+                height: 5px;
+                // border-radius: 50px;
+                transform: rotate(45deg);
+                background: $progress-finish-color;
+            }
+        }
+
+    }
+
+}

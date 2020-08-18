@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>audio</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <button id="start">开始播放</button>
+        <button id="end">结束播放</button>
+        <button id="getStart">获取开始时间</button>
+        <button id="getNow">获取现在时间</button>
+        <button id="getEnd">获取结束时间</button>
+        <button id="setStamp">快进60s</button>
+        <input id="vocController" type="range" min="0" max="100" />
+        <script>
+            let mate = new Audio("/test/night.mp3");
+            // mate.controls = true;
+            // console.log(mate);
+            document.getElementById("root").appendChild(mate);
+            setTimeout(() => {
+                // mate.play();
+            }, 1000);
+
+            document.getElementById("start").onclick = function () {
+                mate.play();
+            };
+
+            document.getElementById("end").onclick = function () {
+                mate.pause();
+            };
+
+            document.getElementById("vocController").onchange = function (e) {
+                mate.volume = e.target.value / 100;
+            };
+
+            document.getElementById("getStart").onclick = function () {
+                console.log(mate.seekable.start(0));
+            };
+
+            document.getElementById("getNow").onclick = function () {
+                console.log(mate.played.end(0));
+            };
+
+            document.getElementById("getEnd").onclick = function () {
+                console.log(mate.seekable.end(0));
+            };
+
+            document.getElementById("setStamp").onclick = function () {
+                mate.currentTime = 60;
+            };
+        </script>
+    </body>
+</html>

@@ -2,12 +2,6 @@
     "code": 1,
     "data": [
         {
-            "title": "todo",
-            "url": "/game/todo",
-            "completed": 100,
-            "img": "http://image.innoweb.cn/2020-08-03-todo.png"
-        },
-        {
             "title": "ttt",
             "url": "/game/ttt",
             "completed": 100,
@@ -16,13 +10,14 @@
         {
             "title": "2048",
             "url": "/game/2048",
-            "completed": 0,
+            "completed": 100,
             "img": "http://image.innoweb.cn/2020-08-16-120338.png"
         },
         {
-            "title": "flappy",
-            "url": "/game/flappy",
-            "completed": 0
+            "title": "AudioPro",
+            "url": "/app/audio",
+            "completed": 100,
+            "img": "http://image.innoweb.cn/2020-08-18-123040.png"
         }
     ]
 }

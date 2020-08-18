@@ -10,7 +10,8 @@ import "./assets/css/public/index.scss";
 
 import Header from "./common/header/index";
 import Home from "./pages/home";
-import Game from "./pages/game";
+import Games from "./pages/game";
+import Apps from "./pages/app";
 
 function App() {
     return (
@@ -20,7 +21,8 @@ function App() {
                     <Header />
                     <Switch>
                         <Route path="/" exact component={Home}></Route>
-                        <Route path="/game" component={Game}></Route>
+                        <Route path="/game" component={Games}></Route>
+                        <Route path="/app" component={Apps}></Route>
                     </Switch>
                 </div>
             </BrowserRouter>

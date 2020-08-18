@@ -10,10 +10,13 @@ I plan to use React to make a small game/app every week, and I will try my best 
 
 | **Game**    | **Progress** | **date**   |
 | ----------- | ------------ | ---------- |
-| Todo        | 100%         | 2020-08-01 |
+| Todo        | 100%         | 2020-08-10 |
 | TicTacToe   | 100%         | 2020-08-12 |
 | 2048        | 100%         | 2020-08-16 |
-| flappy-bird | 0%           | unknown    |
+| AudioPlayer | 100%         | 2020-08-18 |
+| ?           | 0%           | ?          |
+
+> you can give me an address about what to make next.
 
 ## Quick Start
 
@@ -30,4 +33,4 @@ Require nodejs version > `13.7.0` as config scripts were wrote in es6+, also rec
 
 ## License
 
-MIT
+[MIT]()

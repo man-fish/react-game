@@ -29,12 +29,14 @@ class Controller extends React.Component {
         // Disable arrow keys scroll page
         window.addEventListener("keydown", this.keyDownHandler, false);
     }
+
     componentWillUnmount() {
         // Never forget remove event after component unmounted,
         // avoid memory leak
         window.removeEventListener("keyup", this.keyUpHandler, false);
         window.removeEventListener("keydown", this.keyDownHandler, false);
     }
+
     keyDownHandler = (e) => {
         switch (e.keyCode) {
             case keyUp:
@@ -48,6 +50,7 @@ class Controller extends React.Component {
                 break;
         }
     };
+
     handleKeyUp = (e) => {
         switch (e.keyCode) {
             case keyW:
@@ -74,30 +77,39 @@ class Controller extends React.Component {
                 break;
         }
     };
+
     generalMove(move) {
         move();
         let { isMoved } = this.props;
+        if (isMoved) this.props.audioMove.play();
         setTimeout(() => {
             if (isMoved) {
+                this.props.audioPopup.play();
                 this.props.onPlaceRandom();
             }
         }, 300);
     }
+
     handleMoveUp = (e) => {
         this.generalMove(this.props.onMoveUp);
     };
+
     handleMoveLeft = (e) => {
         this.generalMove(this.props.onMoveLeft);
     };
+
     handleMoveDown = (e) => {
         this.generalMove(this.props.onMoveDown);
     };
+
     handleMoveRight = (e) => {
         this.generalMove(this.props.onMoveRight);
     };
+
     handleReset = (e) => {
         this.props.onReset();
     };
+
     render() {
         // const { delay } = this.props;
         return (

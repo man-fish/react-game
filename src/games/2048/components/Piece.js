@@ -1,5 +1,4 @@
 import React from "react";
-import { pitch } from "file-loader";
 
 export default class Piece extends React.Component {
     render() {

@@ -1,3 +1,5 @@
+@import url('https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css');
+
 @font-face {
     font-family: crumbledPixel;
     src: url("../fonts/crumbled-pixels/crumbled_pixels.ttf");
@@ -26,10 +28,12 @@ code {
 html,
 body {
     height: 100%;
+    z-index: -3;
 }
 
 #root {
     height: 100%;
+    z-index: -3;
 }
 
 a {
