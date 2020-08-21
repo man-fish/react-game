@@ -2,7 +2,7 @@
     "code": 1,
     "data": [
         {
-            "title": "ttt",
+            "title": "TicTacToe",
             "url": "/game/ttt",
             "completed": 100,
             "img": "http://image.innoweb.cn/2020-08-16-120646.png"
@@ -18,6 +18,12 @@
             "url": "/app/audio",
             "completed": 100,
             "img": "http://image.innoweb.cn/2020-08-18-123040.png"
+        },
+        {
+            "title": "ImgUploader",
+            "url": "/app/imguploader",
+            "completed": 100,
+            "img": "http://image.innoweb.cn/2020-08-20-135129.png"
         }
     ]
 }

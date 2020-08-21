@@ -28,17 +28,21 @@ code {
 html,
 body {
     height: 100%;
-    z-index: -3;
 }
 
 #root {
     height: 100%;
-    z-index: -3;
 }
 
 a {
     text-decoration: none;
     color: #000;
+}
+
+.divider {
+    height: 100%;
+    width: 1px;
+    background: #999;
 }
 
 .origami {

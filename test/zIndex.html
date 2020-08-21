@@ -5,26 +5,87 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
-            div {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .box1 {
+                width: 400px;
+                height: 200px;
                 position: relative;
-                width: 100px;
-                height: 100px;
-                background: #000;
-                z-index: 299;
+                z-index: 0;
+                background-color: lightpink;
+            }
+            .box2 {
+                width: 180px;
+                height: 120px;
+                background-color: khaki;
+            }
+            .box3 {
+                position: absolute;
+                top: 0px;
+                z-index: -1;
+                width: 200px;
+                height: 150px;
+                background-color: lightcoral;
+                padding-top: 120px;
+                box-sizing: border-box;
             }
 
-            div div {
+            .box4 {
+                width: 160px;
+                height: 40px;
+                background-color: lightseagreen;
+            }
+            .box5 {
+                width: 140px;
+                height: 50px;
+                background-color: lightslategrey;
                 position: absolute;
-                width: 30px;
-                height: 30px;
-                background: yellowgreen;
-                z-index: 1;
+                top: 0;
+            }
+            .box6 {
+                width: 120px;
+                height: 40px;
+                background-color: lightgreen;
+                position: absolute;
+                top: 20px;
+                z-index: 10;
+            }
+
+            .box7 {
+                position: absolute;
+                top: 50px;
+                width: 400px;
+                height: 20px;
+                z-index: 6;
+                background-color: lawngreen;
+            }
+
+            .box1 > span {
+                position: absolute;
+                bottom: 0;
             }
         </style>
     </head>
     <body>
-        <div>
-            <div></div>
+        <div class="box1">
+            <span>a stacking context contains 5 element with zindex=0</span>
+            <div class="box2">
+                <br />
+                <br />
+
+                <div class="box3">zindex=-1</div>
+
+                <div class="box4"><br />after block</div>
+                block
+            </div>
+            <div class="box5">z-index=0</div>
+            <div class="box6">z-index=7</div>
+        </div>
+        <div class="box7">
+            another stacking context with zindex=6
         </div>
     </body>
 </html>

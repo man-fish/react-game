@@ -1,0 +1,271 @@
+@import "../../var.scss";
+@import "./var.scss";
+
+.FUploader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 920px;
+    height: 470px;
+    box-sizing: border-box;
+    padding: 20px 0px 20px 20px;
+    background: $uploader-bg;
+    box-shadow: $white-shadow;
+    user-select: none;
+
+    @at-root #{&}__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 330px;
+        height: 100%;
+    }
+
+    @at-root #{&}__right {
+        width: 520px;
+
+    }
+
+    @at-root #{&}__loader {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 350px;
+        height: 330px;
+        overflow: hidden;
+    }
+
+
+    @at-root #{&}__box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        margin-left: 15px;
+        padding: 5px;
+        background: $pic-bg;
+        box-shadow: $light-shadow;
+        border: 2px solid #000;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto 0;
+            width: 100%;
+            max-height: 100%;
+            z-index: 1;
+        }
+
+        input {
+            display: none;
+        }
+
+        button {
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            outline: none;
+            margin-top: -46px;
+            margin-left: -46px;
+            width: 140px;
+            height: 140px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.2);
+            // background: transparent;
+            transform: rotate(45deg);
+            z-index: 2;
+            outline: none;
+            border: none;
+            transition: 1s all ease;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.4);
+            }
+
+            &::after {
+                content: "";
+                width: 2px;
+                height: 140px;
+                position: absolute;
+                background: #000;
+                top: 0;
+                left: 50%;
+                margin-left: -1px;
+            }
+
+
+            &::before {
+                content: "";
+                width: 140px;
+                height: 2px;
+                position: absolute;
+                background: #000;
+                top: 50%;
+                margin-top: -1px;
+                left: 0;
+            }
+        }
+
+
+        &:nth-child(n+4) {
+            margin-top: 15px;
+        }
+
+        &:nth-child(3n+1) {
+            margin-left: 0px;
+        }
+
+    }
+
+    @at-root #{&}__box--add {
+        &::before {
+            content: "+";
+            margin-left: 4px;
+            font-size: 22px;
+            line-height: 0;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s all ease;
+            background: rgba(0, 0, 0, 0.0);
+        }
+
+        &:hover {
+            &:after {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    @at-root #{&}__btn {
+        position: relative;
+        width: 100%;
+        padding: 13px 0 10px 0;
+        border-radius: 5px;
+        border: 2px solid #000;
+        background: #fff;
+        font-weight: 500;
+        font-size: 30px;
+        text-align: center;
+        box-shadow: $light-shadow;
+        outline: none;
+        cursor: pointer;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s all ease;
+            background: rgba(0, 0, 0, 0.0);
+        }
+
+        &:hover {
+            &:after {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    @at-root #{&}__uploader {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 500px;
+        height: 100%;
+        box-sizing: border-box;
+        padding-left: 5px;
+        padding-right: 2px;
+        box-sizing: border-box;
+        overflow: scroll;
+        overflow: scroll;
+        // border-left: 1px solid #999;
+        // box-shadow: $light-shadow;
+
+        &>span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+            width: fit-content;
+            height: fit-content;
+            margin: auto auto;
+            overflow: scroll;
+
+            font: {
+                size: 40px;
+            }
+        }
+    }
+
+    @at-root #{&}__uploader__box {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        border: 2px solid #000;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-shadow: $light-shadow;
+    }
+
+    @at-root #{&}__uploader__icon {
+        flex: 1;
+        // padding: 10px;
+        // background: lightblue;
+    }
+
+    @at-root #{&}__uploader__progress {
+        flex: 3.1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 17px 0px;
+        font-family: youyuan;
+        font-weight: 500;
+        font-size: 15px;
+        color: #333;
+    }
+
+    @at-root #{&}__uploader__info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1.6;
+        padding: 15px 5px;
+        box-sizing: border-box;
+        font-family: youyuan;
+        font-weight: 500;
+        font-size: 8px;
+        color: #333;
+
+        img {
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+}

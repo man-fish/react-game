@@ -1,4 +1,4 @@
-# react-game | [中文](/blob/master/README_CN.md)
+# react-game | [中文](/README_CN.md)
 
 ## Preview
 
@@ -14,7 +14,8 @@ I plan to use React to make a small game/app every week, and I will try my best 
 | TicTacToe   | 100%         | 2020-08-12 |
 | 2048        | 100%         | 2020-08-16 |
 | AudioPlayer | 100%         | 2020-08-18 |
-| ?           | 0%           | ?          |
+| ImgUploader | 100%         | 2020-08-21 |
+| ???         | 0%           | ????-??-?? |
 
 > you can give me an address about what to make next.
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .uploader1 input {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="uploader1">
+            <input type="file" id="input1" />
+            <button class="btn" id="btn1">uploader</button>
+        </div>
+
+        <script>
+            var input1 = document.getElementById("input1");
+            var btn1 = document.getElementById("btn1");
+
+            input1.onchange = function (e) {
+                console.log(this.files);
+                console.log(e.target.files);
+            };
+
+            btn1.onclick = function () {
+                if (input1) {
+                    input1.click();
+                }
+            };
+        </script>
+    </body>
+</html>

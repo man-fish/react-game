@@ -8,12 +8,13 @@ export default class ProgressBar extends React.Component {
             position: 0,
             duration: 0,
             name: "Unkown",
+            frameId: "",
         };
     }
 
     componentDidMount() {
         const draw = () => {
-            requestAnimationFrame(draw);
+            let frameId = requestAnimationFrame(draw);
             const percent =
                 this.props.player.position / this.props.player.duration;
             this.setState({
@@ -23,10 +24,16 @@ export default class ProgressBar extends React.Component {
                 name: this.props.player.current.file
                     ? this.props.player.current.file.name
                     : "Unkown",
+                frameId,
             });
         };
 
         draw();
+    }
+    componentWillUnmount() {
+        if (this.state.frameId) {
+            cancelAnimationFrame(this.state.frameId);
+        }
     }
     formatTime(val) {
         const min = Math.floor(val / 60);
