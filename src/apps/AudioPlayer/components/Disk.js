@@ -11,7 +11,7 @@ class Disk extends React.Component {
     }
 
     render() {
-        let { hasMusic, isPlaying } = this.props;
+        let { isPlaying } = this.props;
         return (
             <div
                 className={

@@ -1,9 +1,8 @@
 import React from "react";
 
-import close from "../../../assets/icon/public/close.svg";
-
 import ImgIcon from "../../../common/ImgIcon";
 import RoundProgress from "../../../common/RoundProgress";
+import UploadInfo from "./UploadInfo";
 
 import { byteTransform } from "../../../utils/byte";
 
@@ -15,12 +14,43 @@ export default class UploadBox extends React.Component {
             loaded: 0,
             total: 0,
             percentage: "0%",
+            info: "0B/0B",
+            frameId: null,
         };
+    }
+
+    componentDidMount() {
+        let { file } = this.props;
+        const draw = () => {
+            let frameId = requestAnimationFrame(draw);
+            let loaded = file.loaded;
+            let total = file.total === 0 ? file.size : file.total;
+            let percentage = `${file.percentage}%`;
+            let info = (
+                <span>
+                    {byteTransform(loaded) + " / " + byteTransform(total)}
+                </span>
+            );
+            this.setState({
+                loaded,
+                total,
+                percentage,
+                info,
+                frameId,
+            });
+        };
+        draw();
+    }
+
+    componentWillUnmount() {
+        if (this.state.frameId) {
+            cancelAnimationFrame(this.state.frameId);
+        }
     }
 
     render() {
         let { file, idx } = this.props;
-        let { loaded, total, percentage } = this.state;
+        let { info, percentage } = this.state;
         return (
             <div className="FUploader__uploader__box">
                 <div className="FUploader__uploader__icon">
@@ -32,29 +62,13 @@ export default class UploadBox extends React.Component {
                     {/* {file.percentage} */}
                 </div>
                 <div className="FUploader__uploader__info">
-                    <img
-                        src={close}
-                        alt="close"
-                        onClick={this.props.cancelUpload.bind(this, idx)}
-                    />
-                    <span>
-                        {byteTransform(loaded) + " "}/
-                        {" " + byteTransform(total)}
-                    </span>
+                    <UploadInfo
+                        cancelUpload={this.props.cancelUpload}
+                        info={info}
+                        idx={idx}
+                    ></UploadInfo>
                 </div>
             </div>
         );
-    }
-    componentDidMount() {
-        let { file } = this.props;
-        const draw = () => {
-            requestAnimationFrame(draw);
-            this.setState({
-                loaded: file.loaded,
-                total: file.total === 0 ? file.size : file.total,
-                percentage: `${file.percentage}%`,
-            });
-        };
-        draw();
     }
 }

@@ -25,7 +25,7 @@ export default class Loader extends React.Component {
                 </label>{" "}
                 {files.map((file, idx) => {
                     if (file.isUploading || file.isUploaded) {
-                        return;
+                        return null;
                     }
                     return (
                         <div className="FUploader__box" key={idx}>

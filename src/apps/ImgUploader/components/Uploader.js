@@ -4,10 +4,17 @@ import UploadBox from "./UploadBox";
 
 export default class Uploader extends React.Component {
     render() {
-        let { files, isPrepared } = this.props;
+        let { files } = this.props;
         let isUploading = false;
         for (let i = 0; i < files.length; i++) {
-            if (files[i].isUploading || files[i].isUploaded) isUploading = true;
+            if (
+                files[i].isUploading ||
+                files[i].isUploaded ||
+                files[i].isPrepared
+            ) {
+                isUploading = true;
+                break;
+            }
         }
         return (
             <div className="FUploader__uploader">
@@ -25,6 +32,7 @@ export default class Uploader extends React.Component {
                             ></UploadBox>
                         );
                     }
+                    return null;
                 })}
             </div>
         );

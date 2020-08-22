@@ -153,7 +153,7 @@ class ImgUpLoader {
         for (let i = 0; i < this.files.length; i++) {
             if (!this.files[i].isUploaded && !this.files[i].isUploading) {
                 this.files[i].isUploading = true;
-                await this._upload(this.files[i]).catch((err) => {
+                await this._upload(this.files[i], i).catch((err) => {
                     console.log(err);
                 });
             }
@@ -163,19 +163,18 @@ class ImgUpLoader {
         return this;
     }
 
-    _upload(imgFile) {
+    _upload(imgFile, fileIdx) {
         const { xhr, binaryString } = imgFile;
         return new Promise((resolve, reject) => {
             // 更新文件上传进度
             xhr.upload.addEventListener(
                 "progress",
                 function (e) {
-                    console.log(e.loaded);
                     if (e.lengthComputable) {
                         imgFile.loaded = e.loaded;
                         imgFile.total = e.total;
 
-                        var percentage = Math.round((e.loaded * 100) / e.total);
+                        var percentage = Math.ceil((e.loaded * 100) / e.total);
                         imgFile.percentage = percentage;
                         // this.onUploading.emit(this);
                     }
@@ -185,20 +184,18 @@ class ImgUpLoader {
             // 文件上传成功
             xhr.upload.addEventListener(
                 "load",
-                function (e) {
+                (e) => {
                     imgFile.isUploaded = true;
                     imgFile.isUploading = false;
-                    // this.onLoaded.emit(this);
-                    console.log("success");
+                    this.onLoaded.emit(fileIdx);
                     resolve("upload success");
                 },
                 false
             );
             // 文件上传失败
-            xhr.addEventListener("error", function (e) {
+            xhr.addEventListener("error", (e) => {
                 imgFile.isUploading = false;
-                // this.onError.emit(this);
-                console.log("error");
+                this.onError.emit(fileIdx);
                 reject("error" + e.type.toString());
             });
             xhr.overrideMimeType("text/plain; charset=x-user-defined-binary");

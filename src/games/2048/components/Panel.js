@@ -4,7 +4,7 @@ import Controller from "./Controller";
 
 export default class Panel extends React.Component {
     render() {
-        let { score, gameOver, delay, audioMove, audioPopup } = this.props;
+        let { score, delay, audioMove, audioPopup } = this.props;
         return (
             <div className="b2048__panel">
                 <div className="b2048__panel__info">
