@@ -15,6 +15,7 @@ I plan to use React to make a small game/app every week, and I will try my best 
 | 2048        | 100%         | 2020-08-16 |
 | AudioPlayer | 100%         | 2020-08-18 |
 | ImgUploader | 100%         | 2020-08-21 |
+| Todo        | 100%         | 2020-08-22 |
 | ???         | 0%           | ????-??-?? |
 
 > you can give me an address about what to make next.
