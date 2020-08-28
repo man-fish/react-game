@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Fragment, Component } from "react";
 
 import close from "../../../assets/icon/public/close.svg";
 
 import { loader } from "../store/imgUpLoader";
 
-export default class UploadInfo extends React.Component {
+export default class UploadInfo extends Component {
     constructor(props) {
         super(props);
 
@@ -18,14 +18,14 @@ export default class UploadInfo extends React.Component {
         let { info: overInfo } = this.state;
         info = overInfo ? overInfo : info;
         return (
-            <React.Fragment>
+            <Fragment>
                 <img
                     src={close}
                     alt="close"
                     onClick={this.props.cancelUpload.bind(this, idx)}
                 />
                 {info}
-            </React.Fragment>
+            </Fragment>
         );
     }
 

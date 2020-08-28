@@ -1,19 +1,4 @@
-class Dispatcher {
-    constructor() {
-        this.handlers = [];
-    }
-
-    listen(handler) {
-        this.handlers.push(handler);
-    }
-
-    emit(...args) {
-        this.handlers.forEach((handler) => {
-            handler(...args);
-        });
-    }
-}
-
+import Dispatcher from "../../../utils/Dispatcher";
 export default class Player {
     constructor() {
         this.audioContext = new AudioContext();

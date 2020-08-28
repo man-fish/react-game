@@ -2,7 +2,7 @@
 
 ## Preview
 
-[preview](https://image.innoweb.cn/2020-08-14-015734.png)
+Online project demo： http://game.innoweb.cn
 
 ## Introduction
 

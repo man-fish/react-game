@@ -18,9 +18,21 @@ class TodoController extends React.Component {
                 />
                 <button onClick={this.props.addTodoItem}>add</button>
                 <button onClick={this.props.clearTodoList}>clear</button>
+
+                {/* <input type="file" onChange={this.handleChange.bind(this)} /> */}
             </div>
         );
     }
+    // handleChange(e) {
+    //     console.log(e.target.files);
+    //     let file = e.target.files[0];
+    //     for (let key in file) {
+    //         console.log(Object.getOwnPropertyDescriptor(file, key));
+    //         // console.log(file[key]);
+    //     }
+    //     let f = JSON.parse(JSON.stringify(file));
+    //     console.log(f);
+    // }
 }
 
 const mapStateToProps = (state) => {

@@ -25,7 +25,7 @@
         padding-top: 100%;
         border-radius: 100%;
         overflow: hidden;
-        transform: translateY(-42%) scale(0.95);
+        transform: translateY(-42%)scale(0.95);
         transform-origin: bottom center;
         transition: all 0.8s ease;
         background: #000;
@@ -41,6 +41,7 @@
         left: -10px;
         bottom: -10px;
         right: -10px;
+
         background: $disk-bg;
         // background-image: radial-gradient(circle, $disk-bg-center 0%, $disk-bg 100%);
         background-size: cover;
